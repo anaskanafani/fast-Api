@@ -41,7 +41,7 @@ async def predict(data: BankNote):
     curtosis = data['curtosis']
     entropy = data['entropy']
 
-    prediction = classifier.predict([[variance, skewness, curtosis, entropy]])
+    prediction = rfmodel.predict([[variance, skewness, curtosis, entropy]])
     print(prediction)
     if prediction[0] > 0.5:
         prediction = "Fake note"
