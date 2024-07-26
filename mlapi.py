@@ -27,6 +27,10 @@ class BankNote(BaseModel):
 #     yhat = model.predict(df)
 #     return {"prediction":int(yhat)}
 
+@app.get("/")
+async def index():
+    return {"message": "Hello World"}
+
 @app.post("/predict")
 async def predict(data: BankNote):
     print(data)
